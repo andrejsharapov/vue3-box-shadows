@@ -1,10 +1,13 @@
 <script lang="ts">
-// import { collection } from "./shadows.js";
+import { collection } from "../shadows";
 
 export default {
   setup() {
-    const items = []; // collection;
+    const items = collection;
+
+    return { items }
   }
+
 }
 </script>
 
