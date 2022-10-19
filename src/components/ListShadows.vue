@@ -12,26 +12,25 @@ export default {
 </script>
 
 <template lang="pug">
-div
-  //- ANCHOR use shadow name
-  .list
-    .list-item(v-box-shadow:l-4)
-    .list-item(v-box-shadow:ay-6)
-    .list-item(v-box-shadow:r-4)
+//- ANCHOR use shadow name
+.list
+  .list-item(v-box-shadow:l-4)
+  .list-item(v-box-shadow:ay-6)
+  .list-item(v-box-shadow:r-4)
 
-  br
+br
 
-  //- ANCHOR use shadow id
-  .list
-    .list-item(
-      v-for="(item, index) in items"
-      :key="index"
-      v-box-shadow="item.id"
-      :class="{ 'no-name': !item.name }"
-    )
-      small id: {{ item.id }}
-      div {{ item.name }}
-  </template>
+//- ANCHOR use shadow id
+.list
+  .list-item(
+    v-for="(item, index) in items"
+    :key="index"
+    v-box-shadow="item.id"
+    :class="{ 'no-name': !item.name }"
+  )
+    small id: {{ item.id }}
+    div {{ item.name }}
+</template>
 
 <style scoped lang="sass">
 .list
