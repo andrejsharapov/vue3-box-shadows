@@ -1,6 +1,6 @@
 # Vue3 Box-shadows
 
-Wrapper for [vue-box-shadows](https://github.com/andrejsharapov/vue-box-shadows/) for creating beautiful and airy shadows in Vue 3 projects.
+Wrapper for [vue-box-shadows](https://github.com/andrejsharapov/vue-box-shadows#vue-box-shadows) for creating beautiful and airy shadows in Vue 3 projects.
 
 ---
 [![discord][discord-img]][discord]
