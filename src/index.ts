@@ -2,54 +2,52 @@ import { base, collection } from "./shadows";
 
 const currentValue = "vBoxShadowValue";
 
-const baseBoxShadow = (el: any) => {
+const baseBoxShadow = (el: any = {}) => {
   if (el === undefined) {
     el = base;
   }
 
-  if (el !== undefined) {
-    const isInset = (el: any) => {
-      if (isNaN(el.inset) || el.inset === false) {
-        return "";
-      } else {
-        return "inset ";
-      }
-    };
-
-    const getColor = (el: any) => {
-      if (el.color !== "transparent") {
-        return " rgb(" + el.color + " / " + el.opacity + "%)";
-      } else {
-        return "transparent";
-      }
-    };
-
-    const shadow = (el: any) => {
-      return (
-        isInset(el) +
-        el.offsetX +
-        " " +
-        el.offsetY +
-        " " +
-        el.blur +
-        " " +
-        el.spread +
-        " " +
-        getColor(el)
-      );
-    };
-
-    if (el.multiple) {
-      const em = el.multiple;
-
-      return em
-        .map(function (el: any) {
-          return shadow(el);
-        })
-        .join(", ");
+  const isInset = (el: any) => {
+    if (isNaN(el.inset) || el.inset === false) {
+      return "";
     } else {
-      return shadow(el);
+      return "inset ";
     }
+  };
+
+  const getColor = (el: any) => {
+    if (el.color !== "transparent") {
+      return " rgb(" + el.color + " / " + el.opacity + "%)";
+    } else {
+      return "transparent";
+    }
+  };
+
+  const shadow = (el: any) => {
+    return (
+      isInset(el) +
+      el.offsetX +
+      " " +
+      el.offsetY +
+      " " +
+      el.blur +
+      " " +
+      el.spread +
+      " " +
+      getColor(el)
+    );
+  };
+
+  if (el.multiple) {
+    const em = el.multiple;
+
+    return em
+      .map(function (el: any) {
+        return shadow(el);
+      })
+      .join(", ");
+  } else {
+    return shadow(el);
   }
 };
 
@@ -98,7 +96,7 @@ function getRootDocument(): Document {
 const VueBoxShadow = {
   install(app: any, options: any) {
     options = Object.assign(
-      { useClass: false, shadowBaseCustom: baseBoxShadow(undefined) },
+      { useClass: false, shadowBaseCustom: baseBoxShadow() },
       options
     );
 

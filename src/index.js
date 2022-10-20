@@ -7,49 +7,47 @@ const baseBoxShadow = (el) => {
     el = base;
   }
 
-  if (el !== undefined) {
-    const isInset = (el) => {
-      if (isNaN(el.inset) || el.inset === false) {
-        return "";
-      } else {
-        return "inset ";
-      }
-    };
-
-    const getColor = (el) => {
-      if (el.color !== "transparent") {
-        return " rgb(" + el.color + " / " + el.opacity + "%)";
-      } else {
-        return "transparent";
-      }
-    };
-
-    const shadow = (el) => {
-      return (
-        isInset(el) +
-        el.offsetX +
-        " " +
-        el.offsetY +
-        " " +
-        el.blur +
-        " " +
-        el.spread +
-        " " +
-        getColor(el)
-      );
-    };
-
-    if (el.multiple) {
-      const em = el.multiple;
-
-      return em
-        .map(function (el) {
-          return shadow(el);
-        })
-        .join(", ");
+  const isInset = (el) => {
+    if (isNaN(el.inset) || el.inset === false) {
+      return "";
     } else {
-      return shadow(el);
+      return "inset ";
     }
+  };
+
+  const getColor = (el) => {
+    if (el.color !== "transparent") {
+      return " rgb(" + el.color + " / " + el.opacity + "%)";
+    } else {
+      return "transparent";
+    }
+  };
+
+  const shadow = (el) => {
+    return (
+      isInset(el) +
+      el.offsetX +
+      " " +
+      el.offsetY +
+      " " +
+      el.blur +
+      " " +
+      el.spread +
+      " " +
+      getColor(el)
+    );
+  };
+
+  if (el.multiple) {
+    const em = el.multiple;
+
+    return em
+      .map(function (el) {
+        return shadow(el);
+      })
+      .join(", ");
+  } else {
+    return shadow(el);
   }
 };
 
