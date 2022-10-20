@@ -30,6 +30,7 @@
     "sass-loader": "^13.1.0",
     "typescript": "~4.7.4",
     "vite": "^3.0.9",
+    "vite-plugin-html": "^3.2.0",
     "vue-tsc": "^0.40.7"
   },
   "description": "Collection of CSS box-shadows for every taste contains more than 100 simple, beautiful and airy shadows.",

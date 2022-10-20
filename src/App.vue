@@ -2,8 +2,9 @@
 import ListShadows from './components/ListShadows.vue'
 
 const pack = {
-  title: 'Vue-box-shadows',
-  desc: 'A collection of over 100 airy CSS box-shadows for every taste for your project on vue 3.',
+  title: import.meta.env.VITE_APP_TITLE,
+  v: import.meta.env.VITE_APP_VERSION,
+  desc: import.meta.env.VITE_APP_DESCRIPTION,
 };
 </script>
 
