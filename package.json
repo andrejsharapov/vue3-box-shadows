@@ -35,7 +35,16 @@
   },
   "description": "Collection of CSS box-shadows for every taste contains more than 100 simple, beautiful and airy shadows.",
   "main": "src/index.js",
-  "author": "Andrej Sharapov",
+  "author": "Andrej Sharapov<https://github.com/andrejsharapov>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "repository": "https://github.com/andrejsharapov/vue3-box-shadows.git",
+  "keywords": [
+    "frontend",
+    "vue",
+    "vue3",
+    "css",
+    "box-shadow",
+    "css-box-shadow"
+  ]
 }
