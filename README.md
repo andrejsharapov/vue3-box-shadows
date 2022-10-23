@@ -13,7 +13,7 @@ A collection of simple and airy shadows for Vue.js v3 projects.
 [![GitHub stars](https://img.shields.io/github/stars/andrejsharapov/vue3-box-shadows.svg?style=social)][stars]
 
 <p align="right">
-<img alt="vue-box-shadows" width="64" height="64" src="https://raw.githubusercontent.com/andrejsharapov/vue3-box-shadows/develop/src/logo.svg">
+<img alt="vue-box-shadows" width="64" height="64" src="https://raw.githubusercontent.com/andrejsharapov/vue3-box-shadows/v1.1.0/logo.svg">
 </p>
 
 > **Note**  
@@ -25,7 +25,7 @@ A collection of simple and airy shadows for Vue.js v3 projects.
 ```bash
 $ npm i --save-dev vue3-box-shadows
 # or yarn
-$ yarn add --save-dev vue3-box-shadows
+$ yarn add --dev vue3-box-shadows
 ```
 
 ## Usage
@@ -52,7 +52,7 @@ To create a basic shadow element with minimal configuration, write the following
 </template>
 ```
 
-To use collection shadows, you need to apply **ids** or short **names** from the [groups](#groups) table.
+To use collection shadows, you need to apply `id` or short `name-$` ($ is value) from the [groups](#groups) table.
 
 ```html
 <template>
@@ -68,9 +68,9 @@ To use collection shadows, you need to apply **ids** or short **names** from the
 
 ## Groups
 
-Collection of CSS box-shadows for every taste contains more than 100 simple and airy shadows. The entire list of shadows can be viewed in the table below.
+Examples of shadows can be seen in the table below. To work with shadows on your site, simply select a group that matches your site's style (elevation to example), select an ids or names, and you're done.
 
-| Group               |   Id    | Names ($ is value)          | Values |    Examples    |
+| Group               |   Id    | Names                              | Values |    Examples    |
 | ------------------- | :-----: | ---------------------------------- | :----: | :------------: |
 | None                |    0    | `none`                             |   1    |      ---       |
 | Elevation           |  1-24   | `el-$`                             |  1-24  | [View][ex-el]  |
