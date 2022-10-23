@@ -96,7 +96,7 @@ Examples of shadows can be seen in the table below. To work with shadows on your
 | Option           | Type    | Default                          | Description                                                          |
 | ---------------- | ------- | -------------------------------- | -------------------------------------------------------------------- |
 | useClass         | Boolean | false                            | Set to `true` in order to import styles into `<head>` automatically. |
-| shadowBaseCustom | String  | "0 2px 8px 0 rgb(50 50 50 / 8%)" | Set a value for [`box-shadow`][docs] to change the default property. |
+| shadowBaseCustom | String  | "0 2px 8px 0 rgb(50 50 50 / 8%)" | Set a value for [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) to change the default property. |
 
 ```js
 // ...
