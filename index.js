@@ -98,13 +98,13 @@ const VueBoxShadow = {
 
     if (options.useClass) {
       const stylesheets = window.document.styleSheets;
-      const rule = `.vue-box-shadow{${styles}}`;
-
+      const rule = `.vue-box-shadow {${styles}}`;
+      
       if (stylesheets && stylesheets[0] && stylesheets.insertRule) {
         stylesheets.insertRule(rule);
       } else {
         let styleTag = window.document.createElement("style");
-
+        
         styleTag.setAttribute("type", "text/css");
         styleTag.appendChild(window.document.createTextNode(rule));
         window.document.head.appendChild(styleTag);
@@ -112,7 +112,7 @@ const VueBoxShadow = {
     }
 
     app.directive("box-shadow", {
-      created(el) {
+      beforeMount(el) {
         if (!options.useClass) {
           el.style.cssText += styles;
         } else {
@@ -121,7 +121,6 @@ const VueBoxShadow = {
       },
       mounted: (el, bindings) => numShadows(el, bindings),
       updated: (el, bindings) => numShadows(el, bindings),
-      componentUpdated: (el, bindings) => numShadows(el, bindings),
     });
   },
 };
