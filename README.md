@@ -1,6 +1,6 @@
 # Vue3 Box-shadows
 
-Wrapper for [vue-box-shadows](https://github.com/andrejsharapov/vue-box-shadows#vue-box-shadows) for creating beautiful and airy shadows in Vue 3 projects.
+A collection of simple and airy shadows for Vue.js v3 projects.
 
 ---
 [![discord][discord-img]][discord]
@@ -13,8 +13,12 @@ Wrapper for [vue-box-shadows](https://github.com/andrejsharapov/vue-box-shadows#
 [![GitHub stars](https://img.shields.io/github/stars/andrejsharapov/vue3-box-shadows.svg?style=social)][stars]
 
 <p align="right">
-<img alt="vue-box-shadows" width="128" height="128" src="https://raw.githubusercontent.com/andrejsharapov/vue3-box-shadows/develop/src/logo.svg">
+<img alt="vue-box-shadows" width="64" height="64" src="https://raw.githubusercontent.com/andrejsharapov/vue3-box-shadows/develop/src/logo.svg">
 </p>
+
+> **Note**  
+> You are reading the documentation for vue-box-shadows on Vue.js v3.  
+> Documentation for vue-box-shadows for Vue.js v2 is [here](https://github.com/andrejsharapov/vue-box-shadows).
 
 ## Download and Installation
 
@@ -105,7 +109,7 @@ app.use(shadows, {
 
 ## License
 
-Vue3-box-shadows is licensed under the MIT license. You are free to use, modify and distribute this software, as long as the copyright header is left intact.
+Vue-box-shadows is licensed under the MIT license. You are free to use, modify and distribute this software, as long as the copyright header is left intact.
 
 ---
 
