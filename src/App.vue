@@ -1,17 +1,27 @@
-<script setup lang="ts">
-import ListShadows from './components/ListShadows.vue'
+<script>
+export default {
+  setup() {
+    const pkg = require('../package.json');
 
-const pack = {
-  title: import.meta.env.VITE_APP_TITLE,
-  v: import.meta.env.VITE_APP_VERSION,
-  desc: import.meta.env.VITE_APP_DESCRIPTION,
-};
+    const pack = {
+      v: pkg.version,
+      desc: pkg.description,
+    }
+
+    return { pack }
+  },
+}
 </script>
 
 <template lang="pug">
 .container
-  img( alt="logo" class="logo" src="./logo.svg" width="125" height="125")
-  h1.message {{ pack.title }}
+  img(
+    src="../logo.svg",
+    alt="logo",
+    width="125",
+    height="125"
+  )
+  h1.message Vue-box-shadows@{{pack.v}}
     strong
       | 
       | for 
@@ -19,16 +29,19 @@ const pack = {
 
   p {{ pack.desc }}
 
-  ListShadows
+  .list
+    .item(
+      v-for="item in 115",
+      :key="item",
+      v-box-shadow="item",
+    ) {{ item }}
 </template>
 
-<style lang="scss">
+<style>
 :root {
   --base-size: 0.25rem;
   --body-text-color: #1f2229;
   --body-background: #eceef7;
-  --card-border-color: #abc6d034;
-  --card-background: #eceef7;
   --vue-color: #42d392;
 }
 
@@ -44,20 +57,30 @@ body {
   font-size: clamp(1rem, 1.5vw, 2.25rem);
   color: var(--body-text-color);
   background-color: var(--body-background);
+}
 
-  .container {
-    max-width: 86vw;
-    margin: 3rem auto;
-    padding: calc(var(--base-size) * 6);
-    text-align: center;
+.container {
+  max-width: 86vw;
+  margin: 3rem auto;
+  padding: calc(var(--base-size) * 6);
+  text-align: center;
+}
 
-    .message {
-      margin-bottom: 1rem;
+.message {
+  margin-bottom: 1rem;
+}
 
-      span {
-        color: var(--vue-color);
-      }
-    }
-  }
+.message span {
+  color: var(--vue-color);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-gap: 3rem;
+}
+
+.item {
+  padding: 4rem 2rem;
 }
 </style>
