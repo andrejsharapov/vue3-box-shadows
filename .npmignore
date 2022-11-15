@@ -1,0 +1,13 @@
+__tests__/
+.github/
+.vscode/
+/dist
+node_modules/
+src/
+!src/index.js
+!src/shadows.js
+.eslint*
+.gitattributes
+env.d.ts
+*.html
+*?config?*
