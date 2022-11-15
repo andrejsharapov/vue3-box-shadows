@@ -8,6 +8,7 @@ src/
 !src/shadows.js
 .eslint*
 .gitattributes
+.markdownlint.*
 env.d.ts
 *.html
 *?config?*
