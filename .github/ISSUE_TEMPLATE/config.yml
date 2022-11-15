@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Discussions
+    url: https://github.com/andrejsharapov/vue3-box-shadows/discussions
+    about: Use GitHub discussions for message-board style questions and discussions.
+  - name: Discord channel
+    url: https://discord.com/invite/XtT4Hdf3
+    about: Ask questions and discuss with other users in real time.

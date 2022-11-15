@@ -1,39 +1,30 @@
 {
   "name": "vue3-box-shadows",
-  "version": "1.0.0",
+  "version": "1.1.87",
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview --port 4173",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "vue": "^3.2.38"
   },
-  "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@types/node": "^16.11.56",
-    "@vitejs/plugin-vue": "^3.0.3",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^11.0.0",
-    "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.7.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
-    "typescript": "~4.7.4",
-    "vite": "^3.0.9",
-    "vue-tsc": "^0.40.7"
-  },
   "description": "Collection of CSS box-shadows for every taste contains more than 100 simple, beautiful and airy shadows.",
-  "main": "src/index.js",
-  "author": "Andrej Sharapov",
+  "main": "index.js",
+  "author": "Andrej Sharapov<https://github.com/andrejsharapov>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "repository": "https://github.com/andrejsharapov/vue3-box-shadows.git",
+  "keywords": [
+    "frontend",
+    "vue",
+    "vue3",
+    "css",
+    "box-shadow",
+    "css-box-shadow"
+  ],
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0"
+  }
 }

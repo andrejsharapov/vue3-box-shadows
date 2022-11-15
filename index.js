@@ -7,49 +7,47 @@ const baseBoxShadow = (el) => {
     el = base;
   }
 
-  if (el !== undefined) {
-    const isInset = (el) => {
-      if (isNaN(el.inset) || el.inset === false) {
-        return "";
-      } else {
-        return "inset ";
-      }
-    };
-
-    const getColor = (el) => {
-      if (el.color !== "transparent") {
-        return " rgb(" + el.color + " / " + el.opacity + "%)";
-      } else {
-        return "transparent";
-      }
-    };
-
-    const shadow = (el) => {
-      return (
-        isInset(el) +
-        el.offsetX +
-        " " +
-        el.offsetY +
-        " " +
-        el.blur +
-        " " +
-        el.spread +
-        " " +
-        getColor(el)
-      );
-    };
-
-    if (el.multiple) {
-      const em = el.multiple;
-
-      return em
-        .map(function (el) {
-          return shadow(el);
-        })
-        .join(", ");
+  const isInset = (el) => {
+    if (isNaN(el.inset) || el.inset === false) {
+      return "";
     } else {
-      return shadow(el);
+      return "inset ";
     }
+  };
+
+  const getColor = (el) => {
+    if (el.color !== "transparent") {
+      return " rgb(" + el.color + " / " + el.opacity + "%)";
+    } else {
+      return "transparent";
+    }
+  };
+
+  const shadow = (el) => {
+    return (
+      isInset(el) +
+      el.offsetX +
+      " " +
+      el.offsetY +
+      " " +
+      el.blur +
+      " " +
+      el.spread +
+      " " +
+      getColor(el)
+    );
+  };
+
+  if (el.multiple) {
+    const em = el.multiple;
+
+    return em
+      .map(function (el) {
+        return shadow(el);
+      })
+      .join(", ");
+  } else {
+    return shadow(el);
   }
 };
 
@@ -100,13 +98,13 @@ const VueBoxShadow = {
 
     if (options.useClass) {
       const stylesheets = window.document.styleSheets;
-      const rule = `.vue-box-shadow{${styles}}`;
-
+      const rule = `.vue-box-shadow {${styles}}`;
+      
       if (stylesheets && stylesheets[0] && stylesheets.insertRule) {
         stylesheets.insertRule(rule);
       } else {
         let styleTag = window.document.createElement("style");
-
+        
         styleTag.setAttribute("type", "text/css");
         styleTag.appendChild(window.document.createTextNode(rule));
         window.document.head.appendChild(styleTag);
@@ -114,7 +112,7 @@ const VueBoxShadow = {
     }
 
     app.directive("box-shadow", {
-      created(el) {
+      beforeMount(el) {
         if (!options.useClass) {
           el.style.cssText += styles;
         } else {
@@ -123,7 +121,6 @@ const VueBoxShadow = {
       },
       mounted: (el, bindings) => numShadows(el, bindings),
       updated: (el, bindings) => numShadows(el, bindings),
-      componentUpdated: (el, bindings) => numShadows(el, bindings),
     });
   },
 };
